@@ -1,0 +1,114 @@
+/* PianoAudit site — Sonic Luxury: near-black, gold, ivory. No build step. */
+:root {
+  --bg: #0a0a0a;
+  --panel: #121212;
+  --panel-2: #181818;
+  --gold: #d4af37;
+  --gold-hi: #f5d77a;
+  --bronze: #8b7535;
+  --emerald: #00e5a0;
+  --ink: #f4f1e8;
+  --muted: #9a958a;
+  --border: rgba(212, 175, 55, 0.22);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--gold-hi); text-decoration: none; }
+a:hover { text-decoration: underline; }
+img { max-width: 100%; display: block; }
+
+.wrap { max-width: 1040px; margin: 0 auto; padding: 0 20px; }
+
+/* Nav */
+nav {
+  position: sticky; top: 0; z-index: 10;
+  background: rgba(10, 10, 10, 0.92); backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border);
+}
+nav .wrap { display: flex; align-items: center; gap: 22px; height: 56px; }
+.brand { font-size: 19px; font-weight: 300; letter-spacing: 3px; color: var(--ink); }
+.brand b { color: var(--gold); font-weight: 600; }
+nav .links { margin-left: auto; display: flex; gap: 18px; font-size: 14px; }
+nav .links a { color: var(--muted); }
+nav .links a:hover { color: var(--gold-hi); text-decoration: none; }
+
+/* Hero */
+.hero { padding: 72px 0 40px; text-align: center; }
+.hero h1 {
+  font-size: clamp(30px, 5.5vw, 52px); font-weight: 200; letter-spacing: 2px;
+  max-width: 720px; margin: 0 auto;
+}
+.hero h1 em { color: var(--gold); font-style: normal; font-weight: 500; }
+.hero p.sub {
+  color: var(--muted); font-size: clamp(15px, 2.2vw, 19px);
+  max-width: 640px; margin: 18px auto 0;
+}
+.badge-row { margin-top: 30px; display: flex; justify-content: center; gap: 14px; align-items: center; flex-wrap: wrap; }
+.store-badge {
+  display: inline-block; border: 1px solid var(--border); border-radius: 10px;
+  padding: 10px 22px; color: var(--gold-hi); font-size: 15px; letter-spacing: 0.5px;
+}
+.store-badge small { display: block; font-size: 11px; color: var(--muted); letter-spacing: 0; }
+
+/* Sections */
+section { padding: 56px 0; }
+section.alt { background: var(--panel); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+h2 { font-size: clamp(22px, 3.5vw, 30px); font-weight: 300; letter-spacing: 1.5px; margin-bottom: 8px; }
+h2 b { color: var(--gold); font-weight: 500; }
+.lede { color: var(--muted); max-width: 700px; margin-bottom: 30px; }
+
+/* Feature grid */
+.grid { display: grid; gap: 22px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+.card {
+  background: var(--panel-2); border: 1px solid var(--border); border-radius: 14px;
+  padding: 22px;
+}
+.card h3 { font-size: 17px; font-weight: 600; color: var(--gold-hi); margin-bottom: 8px; }
+.card p { font-size: 14.5px; color: #cfcabd; }
+
+/* Screenshot rows */
+.shots { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-top: 34px; }
+.shot { width: min(280px, 78vw); }
+.shot img {
+  border-radius: 22px; border: 1px solid rgba(255,255,255,0.14);
+  box-shadow: 0 18px 50px rgba(0,0,0,0.55);
+}
+.shot figcaption { text-align: center; color: var(--muted); font-size: 13px; margin-top: 10px; }
+
+.report-shot { max-width: 720px; margin: 34px auto 0; }
+.report-shot img { border-radius: 10px; box-shadow: 0 18px 50px rgba(0,0,0,0.55); border: 1px solid rgba(255,255,255,0.14); }
+.report-shot figcaption { text-align: center; color: var(--muted); font-size: 13px; margin-top: 10px; }
+
+/* Pricing */
+.tiers { display: grid; gap: 22px; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); margin-top: 30px; }
+.tier {
+  background: var(--panel-2); border: 1px solid var(--border); border-radius: 16px;
+  padding: 26px 22px; display: flex; flex-direction: column;
+}
+.tier.pro { border-color: var(--gold); box-shadow: 0 0 40px rgba(212,175,55,0.10); }
+.tier h3 { color: var(--gold); font-size: 21px; font-weight: 600; }
+.tier .who { color: var(--muted); font-size: 13px; margin-bottom: 12px; }
+.tier .price { font-size: 26px; font-weight: 300; margin: 6px 0 14px; }
+.tier .price small { font-size: 13px; color: var(--muted); }
+.tier ul { list-style: none; font-size: 14.5px; color: #cfcabd; }
+.tier li { padding: 5px 0 5px 24px; position: relative; }
+.tier li::before { content: "✓"; position: absolute; left: 2px; color: var(--gold); font-weight: 700; }
+
+/* Footer */
+footer { border-top: 1px solid var(--border); padding: 34px 0 44px; color: var(--muted); font-size: 13.5px; }
+footer .wrap { display: flex; flex-wrap: wrap; gap: 16px; justify-content: space-between; }
+
+/* Prose pages (privacy, support) */
+.prose { max-width: 760px; margin: 0 auto; padding: 48px 20px 72px; }
+.prose h1 { font-size: 30px; font-weight: 300; letter-spacing: 1px; border-bottom: 3px solid var(--bronze); padding-bottom: 12px; margin-bottom: 18px; }
+.prose h2 { font-size: 20px; color: var(--gold); margin: 28px 0 8px; font-weight: 500; letter-spacing: 0.5px; }
+.prose p, .prose li { color: #d8d3c6; font-size: 15.5px; }
+.prose ul { padding-left: 22px; margin: 10px 0; }
+.prose b { color: var(--ink); }
