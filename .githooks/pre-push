@@ -1,0 +1,59 @@
+#!/bin/sh
+# Pre-push: require one LOG.md summary somewhere on a substantive task branch.
+# Works identically for humans and any AI agent harness (it's plain git).
+# One-time setup per clone: git config core.hooksPath .githooks
+# Humans may bypass deliberately with: git push --no-verify
+
+zero=0000000000000000000000000000000000000000
+remote_name=${1:-origin}
+
+pushed_paths() {
+  if [ "$remote_sha" = "$zero" ]; then
+    git log --format= --name-only "$local_sha" --not --remotes 2>/dev/null
+  else
+    git diff --name-only "$remote_sha..$local_sha" 2>/dev/null
+  fi
+}
+
+while read local_ref local_sha remote_ref remote_sha; do
+  # Skip ref deletions and tag pushes
+  [ "$local_sha" = "$zero" ] && continue
+  case "$remote_ref" in refs/tags/*) continue ;; esac
+
+  changed=$(pushed_paths)
+
+  # Prose-only and continuity-only pushes do not need a mechanical LOG entry.
+  # Agents still log a docs task when it creates meaningful project history.
+  substantive=$(printf '%s\n' "$changed" | grep -Ev '^(LOG\.md|HANDOFF\.md|TODO\.md|docs/|\.claude/|\.cursor/|.*\.md)$' || true)
+  [ -z "$substantive" ] && continue
+
+  # Look across the whole task branch, not just this push. One task summary is
+  # enough even when the implementation takes many commits and pushes.
+  task_paths=$changed
+  for base_ref in "refs/remotes/$remote_name/master" "refs/remotes/$remote_name/main"; do
+    if git show-ref --verify --quiet "$base_ref"; then
+      base=$(git merge-base "$local_sha" "$base_ref" 2>/dev/null || true)
+      if [ -n "$base" ]; then
+        task_paths=$(git diff --name-only "$base..$local_sha" 2>/dev/null)
+        break
+      fi
+    fi
+  done
+
+  if printf '%s\n' "$task_paths" | grep -qx "LOG.md"; then
+    continue
+  fi
+
+  echo ""
+  echo "PUSH BLOCKED: this substantive task branch has no LOG.md summary."
+  echo ""
+  echo "Add one line for the overall task (not one per commit or push), commit it, and push again:"
+  echo "  $(date +%Y-%m-%d) | <tool>@$(cat "$HOME/.machine-name" 2>/dev/null || hostname -s) | <what changed> | <next step>"
+  echo "During the task, update the same unpushed line as the summary evolves."
+  echo "Once that summary is on the branch, later pushes do not need another line."
+  echo ""
+  echo "(Humans may bypass deliberately with: git push --no-verify)"
+  exit 1
+done
+
+exit 0
