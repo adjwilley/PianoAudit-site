@@ -1,1 +1,5 @@
+# LOG — concise task/milestone summaries. Keep one unpushed task line current; never edit published lines.
+# Format: YYYY-MM-DD | tool@machine | what changed | next
 2026-07-10 | claude-code@macbook | Initial site: landing/privacy/support, Sonic Luxury design, real app screenshots + sample Pro report | point pianoaudit.com DNS at Pages
+2026-07-11 | codex@mini | Added the standard AgentHub guidance and continuity skeleton; LOG policy is one evolving summary per meaningful task branch | verify DNS/Pages, then review live desktop and mobile layouts
+2026-07-16 | claude-code@mini | Android-era refresh (feat/android-and-real-data): Google Play badge + cross-platform copy on all three pages, verdict quotes updated to the shipped ladder, all four screenshots regenerated from a simulator seeded with Anthony's real Yamaha GP1 export (real pitch correction, -uiScreen/-uiDumpReportPDF debug args), Pro sample report re-rendered through the shipping PDF pipeline (gold before-series), favicon/OG set from the app icon, privacy policy platform-neutralized in sync with PianoAnalyzer docs/legal | Anthony reviews the PR (privacy wording + store badges) and merges to deploy
