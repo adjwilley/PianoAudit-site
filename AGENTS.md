@@ -4,7 +4,7 @@ Canonical instructions for AI coding agents (Claude Code, Cowork, Cursor, Codex)
 
 ## What this is
 
-The public static marketing, privacy, and support site for the PianoAudit iOS app (whose source repository is `~/PianoAnalyzer`). Plain HTML and CSS are served by GitHub Pages at `https://pianoaudit.com`; there is no build system or JavaScript framework. A push to `main` changes the public site.
+The public static marketing, privacy, and support site for the PianoAudit app — iOS and Android (source repository `~/PianoAnalyzer`). Plain HTML and CSS are served by GitHub Pages at `https://pianoaudit.com`; there is no build system or JavaScript framework. A push to `main` changes the public site.
 
 ## Session start
 
