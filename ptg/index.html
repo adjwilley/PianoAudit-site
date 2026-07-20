@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>PTG 2026 Offer — PianoAudit</title>
+<meta name="description" content="Redeem your PTG 2026 free trial of PianoAudit Pro.">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/icon-32.png">
+<link rel="apple-touch-icon" href="../assets/icon-180.png">
+<link rel="stylesheet" href="../style.css">
+<style>
+  .kicker {
+    text-transform: uppercase; letter-spacing: 3px; font-size: 12px;
+    color: var(--gold); margin-bottom: 10px;
+  }
+  .offer-chip {
+    background: rgba(212,175,55,0.10); border: 1px solid var(--border);
+    border-radius: 10px; padding: 14px 18px; margin: 22px 0 6px;
+    color: #d8d3c6; font-size: 14.5px;
+  }
+  .platform {
+    background: var(--panel); border: 1px solid var(--border);
+    border-radius: 12px; padding: 22px 24px; margin-top: 22px;
+  }
+  .platform h2 { margin-top: 0; }
+  .platform h2 small { color: var(--muted); font-size: 13px; letter-spacing: 0; font-weight: 400; margin-left: 8px; }
+  .redeem-btn {
+    display: inline-block; margin: 14px 0 6px; padding: 13px 26px;
+    border-radius: 10px; font-size: 16px; font-weight: 600;
+  }
+  /* Live state (use once the App Store link exists): */
+  .redeem-btn.live { background: var(--gold); color: #14120e; }
+  /* Placeholder state: */
+  .redeem-btn.pending {
+    border: 1.5px dashed var(--gold); color: var(--muted); cursor: default;
+  }
+  .code-box {
+    display: inline-block; font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 17px; letter-spacing: 2px; padding: 8px 16px; margin: 2px 0;
+    background: #0e0d0a; border: 1.5px dashed var(--gold); border-radius: 8px; color: var(--muted);
+  }
+  .fine { font-size: 13px; color: var(--muted); margin-top: 8px; }
+  .steps { counter-reset: step; list-style: none; padding-left: 0; margin: 14px 0; }
+  .steps li {
+    counter-increment: step; position: relative; padding: 6px 0 6px 38px;
+    color: #d8d3c6; font-size: 15px;
+  }
+  .steps li::before {
+    content: counter(step); position: absolute; left: 0; top: 5px;
+    width: 24px; height: 24px; border-radius: 50%; background: rgba(212,175,55,0.15);
+    border: 1px solid var(--border); color: var(--gold-hi);
+    font-size: 13px; display: flex; align-items: center; justify-content: center;
+  }
+  .warn {
+    border-left: 3px solid var(--gold); background: rgba(212,175,55,0.07);
+    padding: 10px 14px; font-size: 14px; color: #d8d3c6; margin: 12px 0;
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a href="../" style="text-decoration:none"><span class="brand">Piano<b>Audit</b></span></a>
+    <span class="links">
+      <a href="../#technicians">For Technicians</a>
+      <a href="../#pricing">Pricing</a>
+      <a href="../support/">Support</a>
+    </span>
+  </div>
+</nav>
+
+<main class="prose">
+  <p class="kicker">PTG 2026 · Arlington, VA</p>
+  <h1>Your free trial of Piano<b style="color:var(--gold)">Audit</b> Pro</h1>
+
+  <p>Good to meet you at the convention. Every PTG 2026 technician gets a
+  <b>free 90-day trial of PianoAudit Pro</b> — unlimited pianos, before/after customer
+  reports, and your business branding on every PDF. No cost, no commitment, and the
+  measurement app itself is free for everyone, forever.</p>
+
+  <!-- TODO(anthony): delete this chip once the code + link below are live. -->
+  <div class="offer-chip">
+    <b>Almost ready:</b> convention codes go live shortly. Bookmark this page and check
+    back — your trial will be waiting.
+  </div>
+
+  <div class="platform">
+    <h2>iPhone &amp; iPad <small>one tap to redeem</small></h2>
+    <p>Tap the button below to open the App Store with your code pre-filled. Confirm,
+    and you're all set.</p>
+    <!-- TODO(anthony): replace with the real offer-code link and switch class
+         from "pending" to "live":
+         <a class="redeem-btn live" href="https://apps.apple.com/redeem?ctx=offercodes&id=APP_ID&code=CODE">Redeem Free Trial on the App&nbsp;Store →</a> -->
+    <span class="redeem-btn pending">Redemption link coming shortly</span>
+    <!-- TODO(anthony): verify the offer-code configuration before publishing this claim
+         (PIPPA's iOS codes did not auto-renew; keep the wording only if this offer
+         is configured the same way). -->
+    <p class="fine">No auto-renewal. After 90 days your trial simply ends — no charges,
+    no action needed.</p>
+  </div>
+
+  <div class="platform">
+    <h2>Android <small>a few more steps</small></h2>
+    <p>Google Play requires a payment method on file and a few extra steps:</p>
+    <ol class="steps">
+      <li>Download PianoAudit from the Google Play Store if you haven't already</li>
+      <li>Open PianoAudit, tap <b>Settings</b>, then <b>Upgrade</b></li>
+      <li>Select the <b>Pro</b> subscription</li>
+      <li>Tap the arrow (›) next to your payment method to change it</li>
+      <li>Scroll down and tap <b>Redeem code</b></li>
+      <!-- TODO(anthony): replace with the real Play promo code. -->
+      <li>Enter the code: <span class="code-box">COMING&nbsp;SOON</span></li>
+      <li>Confirm it shows <b>$0.00</b> or <b>"Free for 90 days"</b>, then tap Subscribe</li>
+      <li>Cancel the subscription to prevent auto-renewal (see below)</li>
+    </ol>
+    <div class="warn"><b>Important:</b> Android subscriptions auto-renew after 90 days.
+    Cancel anytime during your trial to avoid charges — you keep full access until the
+    trial ends.</div>
+
+    <h2 style="font-size:16px">How to cancel (Android only)</h2>
+    <ol class="steps">
+      <li>Open the Google Play Store app</li>
+      <li>Tap your profile picture (top right)</li>
+      <li>Tap <b>Payments &amp; subscriptions</b> → <b>Subscriptions</b></li>
+      <li>Find PianoAudit, tap it, and tap <b>Cancel subscription</b></li>
+    </ol>
+    <p class="fine">Or on desktop:
+    <a href="https://play.google.com/store/account/subscriptions">play.google.com/store/account/subscriptions</a></p>
+  </div>
+
+  <h2>After the trial</h2>
+  <p>Keep the professional workflow for <b>$34.99/year</b> (or $149.99 lifetime) — or keep
+  using the free diagnostic forever. Either way, every measurement you saved stays on
+  your device.</p>
+
+  <h2>Questions?</h2>
+  <p>Email <b>support@pianoaudit.com</b> — a human (the piano technician who makes the
+  app) will get back to you.</p>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Willey Piano Tuning · PianoAudit</span>
+    <span><a href="../support/">Support</a> · <a href="../privacy/">Privacy Policy</a></span>
+  </div>
+</footer>
+
+</body>
+</html>
