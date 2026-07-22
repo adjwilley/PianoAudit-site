@@ -40,6 +40,8 @@
     font-size: 17px; letter-spacing: 2px; padding: 8px 16px; margin: 2px 0;
     background: #0e0d0a; border: 1.5px dashed var(--gold); border-radius: 8px; color: var(--muted);
   }
+  /* Live state: solid border, gold text, easy to select-and-copy. */
+  .code-box.live { border-style: solid; color: var(--gold-hi); user-select: all; }
   .fine { font-size: 13px; color: var(--muted); margin-top: 8px; }
   .steps { counter-reset: step; list-style: none; padding-left: 0; margin: 14px 0; }
   .steps li {
@@ -80,10 +82,10 @@
   reports, and your business branding on every PDF. No cost, no commitment, and the
   measurement app itself is free for everyone, forever.</p>
 
-  <!-- TODO(anthony): delete this chip once the code + link below are live. -->
+  <!-- TODO(anthony): delete this chip once the iOS redemption link is live too. -->
   <div class="offer-chip">
-    <b>Almost ready:</b> convention codes go live shortly. Bookmark this page and check
-    back — your trial will be waiting.
+    <b>Android codes are live below.</b> iPhone &amp; iPad redemption goes live shortly —
+    bookmark this page and check back.
   </div>
 
   <div class="platform">
@@ -110,12 +112,11 @@
       <li>Select the <b>Pro</b> subscription</li>
       <li>Tap the arrow (›) next to your payment method to change it</li>
       <li>Scroll down and tap <b>Redeem code</b></li>
-      <!-- TODO(anthony): replace with the real Play promo code. -->
-      <li>Enter the code: <span class="code-box">COMING&nbsp;SOON</span></li>
+      <li>Enter the code: <span class="code-box live">PTG2026</span></li>
       <li>Confirm it shows <b>$0.00</b> or <b>"Free for 90 days"</b>, then tap Subscribe</li>
       <li>Cancel the subscription to prevent auto-renewal (see below)</li>
     </ol>
-    <div class="warn"><b>Important:</b> Android subscriptions auto-renew after 90 days.
+    <div class="warn"><b>Important:</b> Android subscriptions <u>auto-renew</u> after 90 days.
     Cancel anytime during your trial to avoid charges — you keep full access until the
     trial ends.</div>
 
