@@ -40,6 +40,8 @@
     font-size: 17px; letter-spacing: 2px; padding: 8px 16px; margin: 2px 0;
     background: #0e0d0a; border: 1.5px dashed var(--gold); border-radius: 8px; color: var(--muted);
   }
+  /* Live state: solid border, gold text, easy to select-and-copy. */
+  .code-box.live { border-style: solid; color: var(--gold-hi); user-select: all; }
   .fine { font-size: 13px; color: var(--muted); margin-top: 8px; }
   .steps { counter-reset: step; list-style: none; padding-left: 0; margin: 14px 0; }
   .steps li {
@@ -80,24 +82,14 @@
   before/after customer report. The measurement app itself is free for everyone and stays
   free after the trial.</p>
 
-  <!-- TODO(anthony): delete this chip once the code + link below are live. -->
-  <div class="offer-chip">
-    <b>Not live yet:</b> the convention codes haven't been issued. Bookmark this page and
-    check back soon; the redemption link and Android code will appear here.
-  </div>
-
   <div class="platform">
     <h2>iPhone &amp; iPad <small>one tap to redeem</small></h2>
     <p>Tap the button below. It opens the App Store with the offer code already filled in;
     confirm, and the trial starts.</p>
-    <!-- TODO(anthony): replace with the real offer-code link and switch class
-         from "pending" to "live":
-         <a class="redeem-btn live" href="https://apps.apple.com/redeem?ctx=offercodes&id=APP_ID&code=CODE">Redeem Free Trial on the App&nbsp;Store →</a> -->
-    <span class="redeem-btn pending">Redemption link coming shortly</span>
-    <!-- TODO(anthony): verify the offer-code configuration before publishing this claim
-         (PIPPA's iOS codes did not auto-renew; keep the wording only if this offer
-         is configured the same way). -->
-    <p class="fine">The iOS trial doesn't auto-renew. After 90 days it ends on its own, and
+    <a class="redeem-btn live" href="https://apps.apple.com/redeem?ctx=offercodes&amp;id=6789833467&amp;code=PTG2026">Redeem Free Trial on the App&nbsp;Store →</a>
+    <!-- Verified 2026-07-28: Anthony configured this as a non-renewing 3-month
+         offer, so the no-auto-renewal claim below is accurate for iOS. -->
+    <p class="fine">The iOS trial doesn't auto-renew. After 3 months it ends on its own, and
     nothing is charged.</p>
   </div>
 
@@ -110,13 +102,12 @@
       <li>Select the <b>Pro</b> subscription</li>
       <li>Tap the arrow (›) next to your payment method to change it</li>
       <li>Scroll down and tap <b>Redeem code</b></li>
-      <!-- TODO(anthony): replace with the real Play promo code. -->
-      <li>Enter the code: <span class="code-box">COMING&nbsp;SOON</span></li>
+      <li>Enter the code: <span class="code-box live">PTG2026</span></li>
       <li>Confirm it shows <b>$0.00</b> or <b>"Free for 90 days"</b>, then tap Subscribe</li>
       <li>Cancel the subscription to prevent auto-renewal (see below)</li>
     </ol>
-    <div class="warn"><b>Important:</b> Android subscriptions auto-renew after 90 days. You
-    can cancel at any point during the trial and keep full access until it ends.</div>
+    <div class="warn"><b>Important:</b> Android subscriptions <u>auto-renew</u> after 90 days.
+    You can cancel at any point during the trial and keep full access until it ends.</div>
 
     <h2 style="font-size:16px">How to cancel (Android only)</h2>
     <ol class="steps">
