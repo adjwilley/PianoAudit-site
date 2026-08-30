@@ -53,6 +53,7 @@ There is no build or automated test suite. For visible changes, inspect desktop 
 
 - `main` deploys publicly through GitHub Pages. Use a `feat/` or `fix/` branch for visible, legal, or risky changes; tiny repository-documentation-only changes may go directly to `main`.
 - Conventional commits (`feat:`, `fix:`, `docs:`, `chore:`).
+- **Commits are atomic: one complete change that stands on its own.** If the one-line message needs an "and", it's too big. If it doesn't build, or means nothing without the next commit, it's too small — fold it in.
 - **Commit messages describe the change, not the conversation.** One line. No process narration.
 - **Log meaningful tasks, not commits or pushes.** Keep one `LOG.md` summary line current while a task is still unpushed: `YYYY-MM-DD | tool@machine | what changed | next step`. Once published, leave it immutable; append only for a distinct task or a milestone/decision another agent needs to resume. Skip trivial formatting, comments, and administrative doc tweaks. The hook requires one summary somewhere on a substantive task branch, not one per push.
 - Stopping mid-task? Update `HANDOFF.md` (≤25 lines). Out-of-scope ideas go in `TODO.md`; promote real multi-session work with `gh issue create`.
