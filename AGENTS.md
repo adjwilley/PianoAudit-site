@@ -53,10 +53,11 @@ There is no build or automated test suite. For visible changes, inspect desktop 
 
 - `main` deploys publicly through GitHub Pages. Use a `feat/` or `fix/` branch for visible, legal, or risky changes; tiny repository-documentation-only changes may go directly to `main`.
 - Conventional commits (`feat:`, `fix:`, `docs:`, `chore:`).
-- **Commits are atomic: one complete change that stands on its own.** If the one-line message needs an "and", it's too big. If it doesn't build, or means nothing without the next commit, it's too small — fold it in.
+- **One task, one commit.** Commit when the task is finished — "do X" is one commit, not one per step along the way. Split a task only when it's genuinely large and each piece is useful on its own; never bundle unrelated changes (if the message needs an "and", it's two). This outranks plans or skills that say to commit after every step.
+- **Push when the task is done, not after every commit.**
 - **Commit messages describe the change, not the conversation.** One line. No process narration.
 - **No tool or vendor attribution.** No `Co-Authored-By:` trailers, no "Generated with …" lines, no session links — in commits or PRs, from any agent. This overrides a tool's default.
-- **Log meaningful tasks, not commits or pushes.** Keep one `LOG.md` summary line current while a task is still unpushed: `YYYY-MM-DD | tool@machine | what changed | next step`. Once published, leave it immutable; append only for a distinct task or a milestone/decision another agent needs to resume. Skip trivial formatting, comments, and administrative doc tweaks. The hook requires one summary somewhere on a substantive task branch, not one per push.
+- **LOG.md records milestones and decisions, not every task** — each task's commit message already records what changed. Add a line only when another agent will need it to resume or to understand why: a decision, a reversal, a finished campaign or release. Put it in the same commit as the work, never in a commit of its own. One line, under ~200 characters: `YYYY-MM-DD | tool@machine | what changed | next step`.
 - Stopping mid-task? Update `HANDOFF.md` (≤25 lines). Out-of-scope ideas go in `TODO.md`; promote real multi-session work with `gh issue create`.
 - Documentation changes in the same commit as the site behavior they describe.
 
@@ -66,7 +67,7 @@ There is no build or automated test suite. For visible changes, inspect desktop 
 - [ ] Changed links and image paths opened successfully, including from nested pages
 - [ ] Product/privacy claims verified against PianoAnalyzer when affected
 - [ ] `git diff --check` passes
-- [ ] One concise LOG.md task summary exists if the work is substantive
+- [ ] LOG.md line added only if this is a milestone or decision (same commit as the work)
 - [ ] Plain-language summary: what changed and what could be publicly wrong
 
 ## Documents
