@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#1a1a1a">
+<title>Piano Tuning Trainer — Level 3</title>
+<link rel="stylesheet" href="trainer.css?v=9721699">
+</head>
+<body>
+<main id="app">
+  <header class="top">
+    <p class="brand">Piano Tuning Trainer</p>
+    <details class="info">
+      <summary>
+        <h1>Level 3: Inharmonicity</h1>
+        <span class="info-btn" aria-label="Instructions">i</span>
+      </summary>
+      <div class="info-body">
+        <p>Two strings play together, and the second is slightly out of tune. Press Play, then move the tuning slider until the beating stops. Press Submit when you think it's in tune.</p>
+        <p>On this level each string has a real piano's overtones. A piano string is stiff, so its overtones run a little sharp, more so the higher they go. Both strings share that stretch, but each overtone beats at its own speed: the second twice as fast as the first, the third three times as fast. Listen for the fast shimmer high in the tone as well as the slow pulse underneath.</p>
+        <p>The display shows the beats. Bright and dark bands are beats. Far out of tune, the stripe splits in two. One steady stripe means in tune. Switch the display off to train by ear alone; it comes back when you submit.</p>
+      </div>
+    </details>
+  </header>
+
+
+
+
+
+  <section class="display-zone" aria-label="Beat display">
+    <div class="display-row">
+      <div class="display-frame">
+        <canvas id="waterfall" role="img" aria-label="Beat display: bright and dark bands are beats; one steady stripe means in tune."></canvas>
+        <div class="cover" id="display-cover" hidden>Ears only — the display comes back when you submit</div>
+        <label class="switch on-graph" aria-label="Show the beat display">
+          <input type="checkbox" id="show-display" checked>
+          <span class="switch-track" aria-hidden="true"></span>
+        </label>
+      </div>
+      <div class="volume-col">
+        <svg class="vol-icon" viewBox="0 0 24 24" aria-hidden="true"><polygon points="4,9 8,9 13,5 13,19 8,15 4,15"/><path d="M16 8.5a5 5 0 0 1 0 7M18.5 6a8.5 8.5 0 0 1 0 12"/></svg>
+        <input type="range" id="volume" min="0" max="100" step="1" value="80" aria-label="Volume" aria-orientation="vertical">
+        <svg class="vol-icon" viewBox="0 0 24 24" aria-hidden="true"><polygon points="4,9 8,9 13,5 13,19 8,15 4,15"/></svg>
+      </div>
+    </div>
+  </section>
+
+  <div class="tuning-slot">
+    <div class="toast" id="tuning-tip" role="status" hidden>Drag the slider to tune the unison.<br>When the beating stops, it's in tune.</div>
+    <section class="slider-zone" id="slider-zone" aria-labelledby="slider-label">
+      <p class="section-label" id="slider-label">Tuning adjustment</p>
+      <div class="slider-row">
+        <button class="nudge" id="nudge-flat" type="button" aria-label="Lower by a tenth of a cent">◀ 0.1¢</button>
+        <input type="range" id="detune-slider" min="0" max="800" step="1" value="400" aria-label="Tuning of the second string">
+        <button class="nudge" id="nudge-sharp" type="button" aria-label="Raise by a tenth of a cent">0.1¢ ▶</button>
+      </div>
+    </section>
+    <section class="score-card" id="score-card" hidden aria-live="polite">
+      <div class="score-head">
+        <div class="score-number" id="score-num">—</div>
+        <div class="score-avg" id="score-avg" hidden>
+          <div class="score-avg-label">Session avg</div>
+          <div class="score-avg-value" id="score-avg-value">—</div>
+        </div>
+      </div>
+      <p class="score-sub" id="score-sub"></p>
+      <div class="score-bar-wrap"><div class="score-bar" id="score-bar"></div></div>
+    </section>
+  </div>
+
+  <div class="controls">
+    <button id="play-btn" class="round-btn attention" type="button" aria-label="Play">
+      <svg class="icon-play" viewBox="0 0 24 24" aria-hidden="true"><polygon points="6,3 20,12 6,21"/></svg>
+      <svg class="icon-pause" viewBox="0 0 24 24" aria-hidden="true" hidden><rect x="5" y="3" width="4" height="18"/><rect x="15" y="3" width="4" height="18"/></svg>
+    </button>
+    <button id="submit-btn" type="button">Submit</button>
+    <button id="new-round-btn" class="round-btn" type="button" aria-label="New round">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+    </button>
+  </div>
+
+  <section class="note-zone" aria-label="Note">
+    <div class="note-stepper">
+      <button type="button" class="step-btn" id="note-down" aria-label="One key lower">◀</button>
+      <output class="note-readout" id="note-readout" aria-live="polite">A4</output>
+      <button type="button" class="step-btn" id="note-up" aria-label="One key higher">▶</button>
+    </div>
+    <div class="keyboard-wrap" id="keyboard-wrap">
+      <div class="keyboard-scroll">
+        <div class="difficulty-bar" id="difficulty-bar" aria-hidden="true"></div>
+        <div class="keyboard" id="keyboard" role="radiogroup" aria-label="Note"></div>
+      </div>
+    </div>
+  </section>
+</main>
+<div class="perfect-flash" id="perfect-flash" aria-hidden="true"></div>
+<script type="module" src="app.js?v=9721699"></script>
+</body>
+</html>
