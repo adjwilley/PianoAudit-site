@@ -31,8 +31,13 @@ There is no build or automated test suite. For visible changes, inspect desktop 
 6. **Preserve accessibility and responsive behavior.** Images need meaningful alt text; navigation and content must work without hover and at narrow widths; do not trade legibility for visual polish.
 7. **Single source of truth.** Every stated fact lives canonically in one place. Point to or verify the source instead of creating a second independently maintained claim.
 
+## Writing
+
+**Write for the reader, not the conversation.** Everything you produce — code, comments, commits, docs, reports, UI text — must make sense to someone who never saw the chat. Don't name people, quote the request, or describe how the work went, except where a person is the subject (who a decision is waiting on). Instructions about style shape the text and never appear in it: asked for something concise, you write it concisely, with no "In short" section. A revised document is written fresh for a first-time reader, with no "corrected," "v2" or "what changed" sections. Test: would a stranger reading only this file, a year from now, need any of it?
+
 ## Escalate to Anthony (stop and ask)
 
+- Changing `AGENTS.md` or `CLAUDE.md`: propose the exact wording and wait for approval
 - Privacy/legal wording, pricing, subscriptions, App Store availability, or product-positioning changes
 - `CNAME`, DNS, GitHub Pages configuration, redirects, or deployment changes
 - Analytics, tracking, cookies, data collection, forms, or any new dependency
