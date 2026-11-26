@@ -36,7 +36,7 @@
 
 <main class="prose">
   <h1>PianoAudit Privacy Policy</h1>
-  <p><b>Effective date: October 8, 2026</b></p>
+  <p><b>Effective date: November 23, 2026</b></p>
   <p>PianoAudit is made by Willey Piano Tuning (“we”, “us”). This policy covers the PianoAudit
   app, on iOS and Android, and the pianoaudit.com website. In short: what you record and measure
   stays on your device, and anything we collect describes how the software is used.</p>
@@ -44,9 +44,27 @@
   <h2>Microphone</h2>
   <p>PianoAudit uses your device’s microphone for one purpose: measuring the pitch of piano
   notes in real time while you run a measurement. Audio is analyzed in your device’s memory
-  as it arrives and is immediately discarded. <b>Audio is never recorded, saved to disk, or
-  transmitted anywhere.</b> The app keeps only the numbers derived from the sound: note
-  frequencies, pitch offsets, and inharmonicity values.</p>
+  as it arrives and is then discarded. The app keeps the numbers derived from the sound: note
+  frequencies, pitch offsets, and inharmonicity values. <b>The app never sends audio to us or to
+  any server.</b> It saves no audio at all unless you turn on the optional setting described
+  next.</p>
+
+  <h2>Optional note recordings</h2>
+  <p>Settings has an optional switch, “Keep short recordings of each note”. It is off until you
+  turn it on. When it is on, each measurement saves about one second of microphone audio for each
+  note: one short clip per key, stored as lossless FLAC, about 1.5 MB per measurement. A later
+  version of the app can use these clips to re-rate the measurement’s unisons with an improved
+  method.</p>
+  <ul>
+    <li>The recordings stay on your device. They are not sent to us or to any server, and we do
+    not collect them.</li>
+    <li>They are left out of iCloud backup on iOS, and out of Google backup and device transfer
+    on Android.</li>
+    <li>They leave your device only if you export a piano with “Include recordings” turned on
+    and share the export file yourself.</li>
+    <li>They are deleted when you delete their measurement or piano. “Remove Saved Recordings” in
+    Settings deletes all of them at once. You can turn the setting off at any time.</li>
+  </ul>
 
   <h2>Your piano data</h2>
   <ul>
@@ -59,8 +77,9 @@
     them</b> (for example, emailing a PDF to a customer or AirDropping a backup file). Where
     they go is entirely under your control.</li>
     <li>Your device’s standard backup (iCloud on Apple devices, Google backup on Android, or a
-    computer backup) may include the app’s data, like any other app. Those backups are governed
-    by Apple’s or Google’s privacy policy, not ours.</li>
+    computer backup) may include the app’s data, like any other app, apart from the optional
+    note recordings described above. Those backups are governed by Apple’s or Google’s privacy
+    policy, not ours.</li>
   </ul>
 
   <h2>Usage and crash reports</h2>
